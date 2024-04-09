@@ -1,7 +1,13 @@
-import { Button } from "@chakra-ui/react";
+import LandingPage from "./components/LandingPage";
+import NavBar from "./components/NavBar";
 
 function App() {
-  return <Button colorScheme="blue">Button</Button>;
+  return (
+    <>
+      <NavBar />
+      <LandingPage />
+    </>
+  );
 }
 
 export default App;
