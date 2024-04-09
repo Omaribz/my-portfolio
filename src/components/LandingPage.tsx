@@ -3,10 +3,14 @@ import {
   Button,
   Container,
   HStack,
+  Icon,
   Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { FaGithub } from "react-icons/fa";
 import profile from "../assets/04.jpg";
 import game from "../assets/05.jpg";
 import countries from "../assets/07.jpg";
@@ -181,6 +185,26 @@ const LandingPage = () => {
                 <Text fontSize="12px">TYPESCRIPT</Text>
                 <Text fontSize="12px">CHAKRA UI</Text>
               </HStack>
+              <HStack
+                marginTop="10px"
+                color="white"
+                fontWeight="bold"
+                fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
+              >
+                <Link
+                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  isExternal
+                  marginRight="20px"
+                >
+                  Code <Icon as={FaGithub} />
+                </Link>
+                <Link
+                  href="https://game-hub-lyart-seven.vercel.app/"
+                  isExternal
+                >
+                  Live Demo <ExternalLinkIcon mx="2px" />
+                </Link>
+              </HStack>
             </Box>
             <Box paddingLeft="10px" marginBottom={{ base: "30px" }}>
               <Box>
@@ -193,6 +217,26 @@ const LandingPage = () => {
                 <Text fontSize="12px">REACT</Text>
                 <Text fontSize="12px">TYPESCRIPT</Text>
                 <Text fontSize="12px">CHAKRA UI</Text>
+              </HStack>
+              <HStack
+                marginTop="10px"
+                color="white"
+                fontWeight="bold"
+                fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
+              >
+                <Link
+                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  isExternal
+                  marginRight="20px"
+                >
+                  Code <Icon as={FaGithub} />
+                </Link>
+                <Link
+                  href="https://game-hub-lyart-seven.vercel.app/"
+                  isExternal
+                >
+                  Live Demo <ExternalLinkIcon mx="2px" />
+                </Link>
               </HStack>
             </Box>
           </HStack>
@@ -218,8 +262,28 @@ const LandingPage = () => {
                 <Text fontSize="12px">TYPESCRIPT</Text>
                 <Text fontSize="12px">CHAKRA UI</Text>
               </HStack>
+              <HStack
+                marginTop="10px"
+                color="white"
+                fontWeight="bold"
+                fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
+              >
+                <Link
+                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  isExternal
+                  marginRight="20px"
+                >
+                  Code <Icon as={FaGithub} />
+                </Link>
+                <Link
+                  href="https://game-hub-lyart-seven.vercel.app/"
+                  isExternal
+                >
+                  Live Demo <ExternalLinkIcon mx="2px" />
+                </Link>
+              </HStack>
             </Box>
-            <Box paddingLeft="10px">
+            <Box paddingLeft="10px" marginBottom={{ base: "30px" }}>
               <Box>
                 <Image src={quiz} />
               </Box>
@@ -230,6 +294,26 @@ const LandingPage = () => {
                 <Text fontSize="12px">REACT</Text>
                 <Text fontSize="12px">TYPESCRIPT</Text>
                 <Text fontSize="12px">CHAKRA UI</Text>
+              </HStack>
+              <HStack
+                marginTop="10px"
+                color="white"
+                fontWeight="bold"
+                fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
+              >
+                <Link
+                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  isExternal
+                  marginRight="20px"
+                >
+                  Code <Icon as={FaGithub} />
+                </Link>
+                <Link
+                  href="https://game-hub-lyart-seven.vercel.app/"
+                  isExternal
+                >
+                  Live Demo <ExternalLinkIcon mx="2px" />
+                </Link>
               </HStack>
             </Box>
           </HStack>

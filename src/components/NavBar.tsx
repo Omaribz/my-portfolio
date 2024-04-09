@@ -1,4 +1,4 @@
-import { Box, Container, HStack, Spacer, Text } from "@chakra-ui/react";
+import { Box, Container, HStack, Link, Spacer, Text } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
@@ -22,12 +22,24 @@ const NavBar = () => {
         <Spacer />
 
         <HStack
+          width={{ base: "100%", sm: "100%", md: "150px", lg: "150px" }}
           display="flex"
-          justifyContent="center"
-          paddingRight={{ md: "30px" }}
+          justifyContent={{
+            base: "center",
+            sm: "center",
+            md: "space-evenly",
+            lg: "space-evenly",
+          }}
         >
-          <FaGithub />
-          <IoLogoLinkedin />
+          <Link href="https://github.com/Omaribz" isExternal>
+            <FaGithub />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/cynthia-omariba-1a1630a6"
+            isExternal
+          >
+            <IoLogoLinkedin />
+          </Link>
           <FaXTwitter />
         </HStack>
       </Box>
