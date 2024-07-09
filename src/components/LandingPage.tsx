@@ -5,22 +5,54 @@ import {
   HStack,
   Icon,
   Image,
+  Input,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/react";
+import { Textarea } from "@chakra-ui/react";
 import profile from "../assets/04.jpg";
 import game from "../assets/05.jpg";
 import countries from "../assets/07.jpg";
 import shows from "../assets/06.jpg";
 import quiz from "../assets/08.jpg";
 import NavBar from "./NavBar";
+import ball from "../assets/011.png";
+import { ChangeEvent, useState } from "react";
+import React from "react";
+import react from "../assets/React logo.webp";
+import typescript from "../assets/TypeScript logo.png";
+import chakra from "../assets/Chakra.png";
 
 const LandingPage = () => {
+  const [input, setInput] = useState("");
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setInput(e.target.value);
+
+  const isError = input === "";
+  const [value, setValue] = React.useState("");
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const inputValue = e.target.value;
+    setValue(inputValue);
+  };
   return (
-    <>
+    <Container maxW="100%" position="relative">
+      <Image
+        src={ball}
+        position="absolute"
+        top={{ base: "-430", sm: "-430", md: "-400", lg: "-400" }}
+        left={{ base: "-150", sm: "-150", md: "-50", lg: "-150" }}
+      />
       <Box
         display="flex"
         flexDirection={{ base: "column", sm: "column", md: "row", lg: "row" }}
@@ -53,10 +85,12 @@ const LandingPage = () => {
               paddingX={{ base: "20px", sm: "20px", md: "0", lg: "0" }}
               fontSize={{ base: "12px", sm: "12px", md: "15px", lg: "15px" }}
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              sed voluptas a atque ea placeat modi rerum debitis, delectus,
-              architecto corrupti neque. Molestiae deleniti tempore nihil
-              debitis quasi adipisci dolorem.
+              A frontend developer experienced in crafting professional web
+              applications for both small and medium-sized businesses. My
+              expertise lies in translating client requirements into intuitive
+              and visually appealing user interfaces, ensuring compatibility
+              across various browsers and devices, focusing on a mobile-first
+              approach.
             </Text>
           </Box>
           <Container
@@ -71,13 +105,21 @@ const LandingPage = () => {
             }}
             paddingLeft="0"
           >
-            <Button
+            <Link>
+              <a href="#contact-me" color="#fff">
+                CONTACT ME
+              </a>
+              <Box width="30%"></Box>
+            </Link>
+            {/* <Button
               colorScheme="teal"
               variant="link"
               size={{ base: "sm", sm: "sm", md: "md", lg: "md" }}
+              border="2px solid red"
+              padding="0"
             >
               CONTACT ME
-            </Button>
+            </Button> */}
           </Container>
         </VStack>
       </Box>
@@ -180,10 +222,40 @@ const LandingPage = () => {
               <Text fontWeight="bold" marginY="8px">
                 GAMEHUB WEB APP
               </Text>
+              <Text fontSize="sm">
+                GameHub is a dynamic web application designed to cater to gaming
+                enthusiasts by providing a centralized platform to discover and
+                explore a vast collection of games. Powered by the robust RAWG
+                API, GameHub fetches detailed information about games across
+                various genres and platforms, ensuring that users can find games
+                that suit their preferences and devices.
+              </Text>
               <HStack>
-                <Text fontSize="12px">REACT</Text>
-                <Text fontSize="12px">TYPESCRIPT</Text>
-                <Text fontSize="12px">CHAKRA UI</Text>
+                <Text fontSize="16px" fontWeight="bold">
+                  TECH STACK:
+                </Text>
+                <img
+                  src={react}
+                  alt="React JS logo"
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <img
+                  src={typescript}
+                  alt="TypeScript logo"
+                  style={{ width: "40px", height: "40px" }}
+                />
+                <img
+                  src={chakra}
+                  alt="Chakra UI logo"
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    objectFit: "contain",
+                  }}
+                />
+                {/* <Text>React JS</Text> */}
+                {/* <Text fontSize="12px">TYPESCRIPT</Text>
+                <Text fontSize="12px">CHAKRA UI</Text> */}
               </HStack>
               <HStack
                 marginTop="10px"
@@ -213,10 +285,39 @@ const LandingPage = () => {
               <Text fontWeight="bold" marginY="8px">
                 COUNTRIES WEB APP
               </Text>
+              <Text fontSize="sm">
+                This is a web application designed to provide users with
+                detailed information about countries around the world. By using
+                the countries API, it fetches real-time data on countries,
+                offering a comprehensive view of various attributes such as
+                demographics, geography, language and culture.
+              </Text>
               <HStack>
-                <Text fontSize="12px">REACT</Text>
+                <Text fontSize="16px" fontWeight="bold">
+                  TECH STACK:
+                </Text>
+                <img
+                  src={react}
+                  alt="React JS logo"
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <img
+                  src={typescript}
+                  alt="TypeScript logo"
+                  style={{ width: "40px", height: "40px" }}
+                />
+                <img
+                  src={chakra}
+                  alt="Chakra UI logo"
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    objectFit: "contain",
+                  }}
+                />
+                {/* <Text fontSize="12px">REACT</Text>
                 <Text fontSize="12px">TYPESCRIPT</Text>
-                <Text fontSize="12px">CHAKRA UI</Text>
+                <Text fontSize="12px">CHAKRA UI</Text> */}
               </HStack>
               <HStack
                 marginTop="10px"
@@ -225,14 +326,14 @@ const LandingPage = () => {
                 fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
               >
                 <Link
-                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  href="https://github.com/Omaribz/countries-app/tree/main/src"
                   isExternal
                   marginRight="20px"
                 >
                   Code <Icon as={FaGithub} />
                 </Link>
                 <Link
-                  href="https://game-hub-lyart-seven.vercel.app/"
+                  href="https://countries-app-seven-beta.vercel.app/"
                   isExternal
                 >
                   Live Demo <ExternalLinkIcon mx="2px" />
@@ -257,10 +358,37 @@ const LandingPage = () => {
               <Text fontWeight="bold" marginY="8px">
                 RICK&MORTY SHOW
               </Text>
+              <Text fontSize="sm">
+                Rick and Morty is a fan-centric web application that utilizes
+                the Rick and Morty API to fetch detailed information about
+                characters the beloved animated series "Rick and Morty".{" "}
+              </Text>
               <HStack>
-                <Text fontSize="12px">REACT</Text>
+                <Text fontSize="16px" fontWeight="bold">
+                  TECH STACK:
+                </Text>
+                <img
+                  src={react}
+                  alt="React JS logo"
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <img
+                  src={typescript}
+                  alt="TypeScript logo"
+                  style={{ width: "40px", height: "40px" }}
+                />
+                <img
+                  src={chakra}
+                  alt="Chakra UI logo"
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    objectFit: "contain",
+                  }}
+                />
+                {/* <Text fontSize="12px">REACT</Text>
                 <Text fontSize="12px">TYPESCRIPT</Text>
-                <Text fontSize="12px">CHAKRA UI</Text>
+                <Text fontSize="12px">CHAKRA UI</Text> */}
               </HStack>
               <HStack
                 marginTop="10px"
@@ -269,16 +397,13 @@ const LandingPage = () => {
                 fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
               >
                 <Link
-                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  href="https://github.com/Omaribz/rick-morty/tree/main/src"
                   isExternal
                   marginRight="20px"
                 >
                   Code <Icon as={FaGithub} />
                 </Link>
-                <Link
-                  href="https://game-hub-lyart-seven.vercel.app/"
-                  isExternal
-                >
+                <Link href="https://rick-morty-xi-dusky.vercel.app/" isExternal>
                   Live Demo <ExternalLinkIcon mx="2px" />
                 </Link>
               </HStack>
@@ -290,10 +415,36 @@ const LandingPage = () => {
               <Text fontWeight="bold" marginY="8px">
                 QUIZ WEB APP
               </Text>
+              <Text>
+                This is an interactive web application designed to provide users
+                with an engaging and educational experience through quizzes.
+              </Text>
               <HStack>
-                <Text fontSize="12px">REACT</Text>
+                <Text fontSize="16px" fontWeight="bold">
+                  TECH STACK:
+                </Text>
+                <img
+                  src={react}
+                  alt="React JS logo"
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <img
+                  src={typescript}
+                  alt="TypeScript logo"
+                  style={{ width: "40px", height: "40px" }}
+                />
+                <img
+                  src={chakra}
+                  alt="Chakra UI logo"
+                  style={{
+                    width: "70px",
+                    height: "70px",
+                    objectFit: "contain",
+                  }}
+                />
+                {/* <Text fontSize="12px">REACT</Text>
                 <Text fontSize="12px">TYPESCRIPT</Text>
-                <Text fontSize="12px">CHAKRA UI</Text>
+                <Text fontSize="12px">CHAKRA UI</Text> */}
               </HStack>
               <HStack
                 marginTop="10px"
@@ -302,16 +453,13 @@ const LandingPage = () => {
                 fontSize={{ base: "13px", sm: "13px", md: "16px", lg: "16px" }}
               >
                 <Link
-                  href="https://github.com/Omaribz/game-hub/tree/main/src"
+                  href="https://github.com/Omaribz/quiz-app/tree/main/src"
                   isExternal
                   marginRight="20px"
                 >
                   Code <Icon as={FaGithub} />
                 </Link>
-                <Link
-                  href="https://game-hub-lyart-seven.vercel.app/"
-                  isExternal
-                >
+                <Link href="https://quiz-app-coral-phi.vercel.app/" isExternal>
                   Live Demo <ExternalLinkIcon mx="2px" />
                 </Link>
               </HStack>
@@ -333,9 +481,10 @@ const LandingPage = () => {
             md: "column",
             lg: "row",
           }}
+          id="contact-me"
         >
           <Box
-            width={{ base: "340px", sm: "343px", md: "445px", lg: "445px" }}
+            width={{ base: "300px", sm: "343px", md: "445px", lg: "445px" }}
             height={{ base: "138px", sm: "138px", md: "250px", lg: "208px" }}
           >
             <Text
@@ -348,18 +497,65 @@ const LandingPage = () => {
             <Text
               fontSize={{ base: "12px", sm: "12px", md: "18px", lg: "18px" }}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-              autem amet ea natus animi ab repudiandae omnis ipsa atque vel
-              reprehenderit alias est corrupti, deserunt aliquid consectetur
-              accusamus odio repellendus.
+              I would like to hear about your project and how I can help you.
+              Please contact me by filling out the form and I will get back to
+              you in no time.
             </Text>
           </Box>
-          <Box
-            width={{ base: "340px", sm: "340px", md: "445px", lg: "445px" }}
-            height={{ base: "327px", sm: "327px", md: "208px", lg: "208px" }}
-            marginTop={{ md: "20px", lg: "60px" }}
+          <form
+            action="https://formsubmit.co/omaribacynthia2022@gmail.com"
+            method="POST"
           >
             <Box
+              width={{ base: "300px", sm: "340px", md: "445px", lg: "445px" }}
+              height={{ base: "327px", sm: "327px", md: "208px", lg: "208px" }}
+              marginTop={{ md: "20px", lg: "60px" }}
+            >
+              <FormControl isRequired>
+                <FormLabel>Names</FormLabel>
+                <Input placeholder="Names" name="name" />
+              </FormControl>
+              <FormControl isInvalid={isError}>
+                <FormLabel>Email</FormLabel>
+                <Input
+                  type="email"
+                  value={input}
+                  onChange={handleInputChange}
+                  name="email"
+                />
+                {!isError ? (
+                  <FormHelperText>Enter your official email.</FormHelperText>
+                ) : (
+                  <FormErrorMessage>Email is required.</FormErrorMessage>
+                )}
+              </FormControl>
+              <Text mb="8px">Message</Text>
+              <Textarea
+                value={value}
+                onChange={handleChange}
+                placeholder=""
+                size="sm"
+                name="text"
+              />
+              <Box display="flex" justifyContent="flex-end" marginTop="20px">
+                <Button
+                  type="submit"
+                  colorScheme="teal"
+                  variant="link"
+                  fontSize={{
+                    base: "12px",
+                    sm: "12px",
+                    md: "18px",
+                    lg: "18px",
+                  }}
+                  paddingRight={{ base: "12px" }}
+                >
+                  SEND MESSAGE
+                </Button>
+              </Box>
+            </Box>
+          </form>
+          {/* <Box
               borderBottom="2px solid white"
               width={{ base: "330px", sm: "330px", md: "445px", lg: "445px" }}
               height="43px"
@@ -406,27 +602,17 @@ const LandingPage = () => {
               >
                 MESSAGE
               </Text>
-            </Box>
-            <Box display="flex" justifyContent="flex-end" marginTop="20px">
-              <Button
-                colorScheme="teal"
-                variant="link"
-                fontSize={{
-                  base: "12px",
-                  sm: "12px",
-                  md: "18px",
-                  lg: "18px",
-                }}
-                paddingRight={{ base: "12px" }}
-              >
-                SEND MESSAGE
-              </Button>
-            </Box>
-          </Box>
+            </Box> */}
         </Container>
         <NavBar />
       </Container>
-    </>
+      <Image
+        src={ball}
+        position="absolute"
+        bottom={{ base: "-300", lg: "-150" }}
+        left="-150"
+      />
+    </Container>
   );
 };
 
