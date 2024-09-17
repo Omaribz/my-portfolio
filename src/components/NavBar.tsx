@@ -35,7 +35,7 @@ const NavBar = () => {
             <FaGithub />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/cynthia-omariba-1a1630a6"
+            href="https://www.linkedin.com/in/cynthia-o-1a1630a6/"
             isExternal
           >
             <IoLogoLinkedin />

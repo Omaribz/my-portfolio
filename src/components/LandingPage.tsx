@@ -19,6 +19,7 @@ import ball from "../assets/011.png";
 import react from "../assets/React logo.webp";
 import typescript from "../assets/TypeScript logo.png";
 import chakra from "../assets/Chakra.png";
+import NavBar from "./NavBar";
 
 const LandingPage = () => {
   return (
@@ -78,14 +79,7 @@ const LandingPage = () => {
               base: "center",
               md: "flex-start",
             }}
-          >
-            <Text>
-              <a href="#contact-me" color="#fff">
-                CONTACT ME
-              </a>
-              <Box width="30%"></Box>
-            </Text>
-          </Container>
+          ></Container>
         </VStack>
       </Box>
       <Container
@@ -162,7 +156,7 @@ const LandingPage = () => {
               <Box>
                 <Image src={game} />
               </Box>
-              <Text fontWeight="bold" my="8px">
+              <Text fontWeight="bold" my="20px">
                 GAMEHUB WEB APP
               </Text>
               <Text fontSize="sm">
@@ -222,7 +216,7 @@ const LandingPage = () => {
               <Box>
                 <Image src={countries} />
               </Box>
-              <Text fontWeight="bold" my="8px">
+              <Text fontWeight="bold" my="20px">
                 COUNTRIES WEB APP
               </Text>
               <Text fontSize="sm">
@@ -289,7 +283,7 @@ const LandingPage = () => {
               <Box>
                 <Image src={shows} />
               </Box>
-              <Text fontWeight="bold" my="8px">
+              <Text fontWeight="bold" my="20px">
                 RICK&MORTY SHOW
               </Text>
               <Text fontSize="sm">
@@ -343,7 +337,7 @@ const LandingPage = () => {
               <Box>
                 <Image src={quiz} />
               </Box>
-              <Text fontWeight="bold" my="8px">
+              <Text fontWeight="bold" my="20px">
                 QUIZ WEB APP
               </Text>
               <Text>
@@ -394,6 +388,14 @@ const LandingPage = () => {
             </Box>
           </HStack>
         </Box>
+      </Container>
+      <Container maxW="100%">
+        <Container
+          maxW="1110px"
+          borderBottom="2px solid white"
+          paddingBottom="40px"
+        ></Container>
+        <NavBar />
       </Container>
 
       <Image
